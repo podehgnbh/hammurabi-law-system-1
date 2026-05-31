@@ -114,11 +114,16 @@ const Sidebar = () => {
           
           <button
             onClick={handleLogout}
-            className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200"
+            className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 mb-4"
           >
             <LogOut size={18} />
             <span>تسجيل الخروج</span>
           </button>
+
+          <div className="pt-4 border-t border-gray-700 text-[10px] text-gray-500 text-center space-y-1">
+            <p className="text-amber-600/70 font-bold">تطوير: عبدالله مصطفى</p>
+            <p>مجموعة الأياد | 07905861017</p>
+          </div>
         </div>
       </aside>
 

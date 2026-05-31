@@ -110,9 +110,11 @@ const Login = () => {
         </div>
 
         {/* التذييل */}
-        <p className="text-center text-gray-500 text-sm mt-8">
-          نظام حمورابي © 2024 - جميع الحقوق محفوظة
-        </p>
+        <div className="text-center text-gray-500 text-sm mt-8 space-y-1">
+          <p>نظام حمورابي © 2024 - جميع الحقوق محفوظة</p>
+          <p className="text-amber-600 font-semibold">تطوير: المبرمج عبدالله مصطفى - مجموعة الأياد</p>
+          <p>تواصل: 07905861017 | واتساب: 07810822068</p>
+        </div>
       </div>
     </div>
   );
