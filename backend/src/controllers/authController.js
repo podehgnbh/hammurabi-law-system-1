@@ -132,7 +132,7 @@ exports.createLawyer = async (req, res) => {
         password: password, // سيتم عرضها مرة واحدة فقط
         email: lawyer.email,
         phone: lawyer.phone,
-        invitationLink: `${process.env.FRONTEND_URL}/invite/${lawyer.invitationLink}`
+        invitationLink: `${process.env.FRONTEND_URL}/login?u=${lawyer.username}`
       }
     });
   } catch (error) {

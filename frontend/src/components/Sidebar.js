@@ -50,6 +50,16 @@ const Sidebar = () => {
         path: '/analytics',
         icon: BarChart3
       },
+      {
+        label: 'العقود',
+        path: '/contracts',
+        icon: FileText
+      },
+      {
+        label: 'المكتبة',
+        path: '/library',
+        icon: Scale
+      },
     ];
   }
 

@@ -154,7 +154,7 @@ const ClientProfile = () => {
         <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
           {client.photo ? (
             <img
-              src={`${API_BASE}${client.photo}`}
+              src={`${API_BASE}/${client.photo}`}
               alt={client.fullName}
               className="w-24 h-24 rounded-full object-cover border-4 border-amber-600 shadow-lg"
             />

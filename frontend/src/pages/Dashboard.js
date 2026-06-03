@@ -57,21 +57,21 @@ const Dashboard = () => {
       value: stats.totalCases,
       icon: Scale,
       color: 'from-amber-600 to-amber-700',
-      link: '/cases'
+      link: '/clients'
     },
     {
       title: 'القضايا النشطة',
       value: stats.activeCases,
       icon: TrendingUp,
       color: 'from-green-600 to-green-700',
-      link: '/cases'
+      link: '/clients'
     },
     {
       title: 'المستندات',
       value: stats.totalDocuments,
       icon: FileText,
       color: 'from-purple-600 to-purple-700',
-      link: '/documents'
+      link: '/clients'
     }
   ];
 
@@ -169,7 +169,7 @@ const Dashboard = () => {
                       <div className="flex items-center gap-3">
                         {client.photo ? (
                           <img
-                            src={`${process.env.REACT_APP_API_URL?.replace('/api', '')}${client.photo}`}
+                            src={`${process.env.REACT_APP_API_URL?.replace('/api', '')}/${client.photo}`}
                             alt={client.fullName}
                             className="w-10 h-10 rounded-full object-cover border-2 border-amber-600"
                           />

@@ -16,7 +16,7 @@ exports.createClient = async (req, res) => {
 
     let photo = null;
     if (req.file) {
-      photo = `/uploads/${req.file.filename}`;
+      photo = `uploads/${req.file.filename}`;
     }
 
     const client = await Client.create({
@@ -151,7 +151,7 @@ exports.updateClient = async (req, res) => {
           fs.unlinkSync(oldPhotoPath);
         }
       }
-      client.photo = `/uploads/${req.file.filename}`;
+      client.photo = `uploads/${req.file.filename}`;
     }
 
     await client.save();

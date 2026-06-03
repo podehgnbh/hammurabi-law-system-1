@@ -44,7 +44,7 @@ exports.uploadDocument = async (req, res) => {
       title,
       description,
       fileName: req.file.originalname,
-      filePath: `/uploads/${req.file.filename}`,
+      filePath: `uploads/${req.file.filename}`,
       fileType: req.file.mimetype,
       fileSize: req.file.size
     });
