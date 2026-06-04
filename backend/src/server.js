@@ -61,14 +61,19 @@ app.use((err, req, res, next) => {
   });
 });
 
-// بدء السيرفر
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`
-╔════════════════════════════════════════════╗
-║  🏛️  نظام حمورابي - Backend Server       ║
-║  🚀 السيرفر يعمل على المنفذ: ${PORT}       ║
-║  📍 الرابط: http://localhost:${PORT}      ║
-╚════════════════════════════════════════════╝
-  `);
-});
+// بدء السيرفر (فقط في حال لم نكن على Vercel)
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => {
+    console.log(`
+  ╔════════════════════════════════════════════╗
+  ║  🏛️  نظام حمورابي - Backend Server       ║
+  ║  🚀 السيرفر يعمل على المنفذ: ${PORT}       ║
+  ║  📍 الرابط: http://localhost:${PORT}      ║
+  ╚════════════════════════════════════════════╝
+    `);
+  });
+}
+
+// تصدير التطبيق لـ Vercel
+module.exports = app;

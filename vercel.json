@@ -23,14 +23,20 @@
       "dest": "backend/uploads/$1"
     },
     {
-      "src": "/(.*)",
-      "dest": "frontend/$1",
-      "check": true
+      "src": "/static/(.*)",
+      "dest": "/frontend/static/$1"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/frontend/favicon.ico"
+    },
+    {
+      "src": "/manifest.json",
+      "dest": "/frontend/manifest.json"
     },
     {
       "src": "/(.*)",
-      "status": 200,
-      "dest": "frontend/index.html"
+      "dest": "/frontend/index.html"
     }
   ]
 }

@@ -10,7 +10,13 @@ const connectDB = async () => {
     console.log(`✅ MongoDB متصل: ${conn.connection.host}`);
   } catch (error) {
     console.error(`❌ خطأ في الاتصال بقاعدة البيانات: ${error.message}`);
-    process.exit(1);
+    // لا ننهي العملية هنا لكي نسمح لـ Vercel بإكمال الـ build
+    // سيظهر الخطأ في السجلات عند محاولة التشغيل الفعلي
+    if (process.env.NODE_ENV === 'production') {
+      console.warn('⚠️ تحذير: فشل الاتصال بقاعدة البيانات في بيئة الإنتاج. تأكد من إعداد MONGODB_URI');
+    } else {
+      process.exit(1);
+    }
   }
 };
 
